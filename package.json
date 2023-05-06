@@ -1,5 +1,5 @@
 {
-  "name": "type-challenges",
+  "name": "my-type-challenges",
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@7.13.0",
@@ -10,6 +10,7 @@
     "readme": "esno ./scripts/readme.ts",
     "build": "esno ./scripts/build.ts",
     "generate": "esno ./scripts/generate-play.ts",
+    "simgle": "esno ./scripts/generate-simgle.ts",
     "lint": "eslint .",
     "translate": "esno ./scripts/translate-cli.ts",
     "utils:release": "pnpm -C utils release"
