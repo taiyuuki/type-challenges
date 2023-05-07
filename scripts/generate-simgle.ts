@@ -1,4 +1,5 @@
 import path from 'path'
+import { argv } from 'process'
 import fs from 'fs-extra'
 import prompts from 'prompts'
 import c from 'picocolors'
@@ -17,15 +18,20 @@ const LANGRUAGE = 'zh-CN'
 
 async function generateSimgle() {
   console.log(' ')
-  const result = await prompts([{
-    type: 'number',
-    name: 'num',
-    message: '请输入题目序号：',
-  }])
-  if (!result?.num)
-    return console.log(c.yellow('已取消'))
+  let num = argv[argv.length - 1]
+  const regex = /^\d+$/
+  if (!regex.exec(num)) {
+    const result = await prompts([{
+      type: 'number',
+      name: 'num',
+      message: '请输入题目序号：',
+    }])
+    if (!result?.num)
+      return console.log(c.yellow('已取消'))
+    num = result.num
+  }
 
-  const num = String(result.num).padStart(5, '0')
+  num = String(num).padStart(5, '0')
   const quiz = await loadQuizByNo(num)
   if (!quiz) {
     console.log(' ')
