@@ -40,11 +40,11 @@ async function generateSimgle() {
   let { difficulty, title } = resolveInfo(quiz, LANGRUAGE) as QuizMetaInfo & { difficulty: string }
   if (difficulty in REPLACE)
     difficulty = REPLACE[difficulty]
-  const code = formatToCode(quiz, LANGRUAGE)
   const quizePath = path.join(__dirname, '../answers', difficulty)
   const filepath = path.join(quizePath, `${getQuestionFullName(quiz.no, difficulty, title)}.ts`)
   if (fs.existsSync(filepath))
     return console.log(`${c.bold(c.red('文件已存在:'))} ${c.dim(filepath)}`)
+  const code = formatToCode(quiz, LANGRUAGE)
   await fs.ensureDir(quizePath)
   await fs.writeFile(filepath, code, 'utf-8')
   console.log(' ')
