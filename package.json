@@ -10,7 +10,7 @@
     "readme": "esno ./scripts/readme.ts",
     "build": "esno ./scripts/build.ts",
     "generate": "esno ./scripts/generate-play.ts",
-    "simgle": "esno ./scripts/generate-simgle.ts",
+    "single": "esno ./scripts/generate-single.ts",
     "lint": "eslint .",
     "translate": "esno ./scripts/translate-cli.ts",
     "utils:release": "pnpm -C utils release"

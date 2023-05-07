@@ -16,7 +16,7 @@ const REPLACE: Record<string, string> = {
 }
 const LANGRUAGE = 'zh-CN'
 
-async function generateSimgle() {
+async function generateSingle() {
   console.log(' ')
   let num = argv[argv.length - 1]
   const regex = /^\d+$/
@@ -51,4 +51,4 @@ async function generateSimgle() {
   console.log(`${c.bold(c.green('已生成:'))} ${c.dim(filepath)}`)
 }
 
-generateSimgle()
+generateSingle()
