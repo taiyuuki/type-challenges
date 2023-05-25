@@ -5,4 +5,8 @@ dist
 *.log
 *.local
 playground/
+<<<<<<< HEAD
 answers/
+=======
+.playgroundcache
+>>>>>>> 3aabfc227488a2de1e2bec65b6913f53a9fc08f0
